@@ -73,17 +73,17 @@ cd /workspace/stable-diffusion-webui/models/Stable-diffusion
 aria2c -o ponyDiffusionV6XL_v6StartWithThisOne.safetensors https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL/resolve/main/ponyDiffusionV6XL_v6StartWithThisOne.safetensors
 
 echo "Downloading SDXL base model"
-aria2c -o sd_xl_base_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
+echo "aria2c -o sd_xl_base_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
 
 echo "Downloading SDXL Refiner"
-aria2c -o sd_xl_refiner_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors
+echo "aria2c -o sd_xl_refiner_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
 
 echo "Downloading turboDiffusionXL v112 model"
-aria2c -o turboDiffusionXL_v112.safetensors https://huggingface.co/ashleykleynhans/a1111-models/resolve/main/Stable-diffusion/turboDiffusionXL_v112.safetensors
+echo "aria2c -o turboDiffusionXL_v112.safetensors https://huggingface.co/ashleykleynhans/a1111-models/resolve/main/Stable-diffusion/turboDiffusionXL_v112.safetensors"
 
 echo "Downloading SD 1.5 VAE"
 cd /workspace/stable-diffusion-webui/models/VAE
-aria2c -o vae-ft-mse-840000-ema-pruned.safetensors https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
+echo "aria2c -o vae-ft-mse-840000-ema-pruned.safetensors https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors"
 
 echo "Downloading default SDXL VAE - SKIPPING"
 echo "aria2c -o sdxl_vae.safetensors https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors"
