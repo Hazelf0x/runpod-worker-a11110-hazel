@@ -67,9 +67,10 @@ echo "Installing RunPod Serverless dependencies"
 cd /workspace/stable-diffusion-webui
 pip3 install huggingface_hub runpod
 
-echo "Downloading Deliberate v2 model"
+echo "CUSTOM MODEL"
+echo "Downloading PonyDiffusion model"
 cd /workspace/stable-diffusion-webui/models/Stable-diffusion
-aria2c -o deliberate_v2.safetensors https://huggingface.co/ashleykleynhans/a1111-models/resolve/main/Stable-diffusion/deliberate_v2.safetensors
+aria2c -o ponyDiffusionV6XL_v6StartWithThisOne.safetensors https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL/resolve/main/ponyDiffusionV6XL_v6StartWithThisOne.safetensors
 
 echo "Downloading SDXL base model"
 aria2c -o sd_xl_base_1.0.safetensors https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors
@@ -84,8 +85,11 @@ echo "Downloading SD 1.5 VAE"
 cd /workspace/stable-diffusion-webui/models/VAE
 aria2c -o vae-ft-mse-840000-ema-pruned.safetensors https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors
 
-echo "Downloading SDXL VAE"
-aria2c -o sdxl_vae.safetensors https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors
+echo "Downloading default SDXL VAE - SKIPPING"
+echo "aria2c -o sdxl_vae.safetensors https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors"
+
+echo "Downloading Pony VAE"
+aria2c -o sdxl_vae.safetensors https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL/resolve/main/sdxl_vae.safetensors
 
 echo "Downloading SD 1.5 ControlNet models"
 mkdir -p /workspace/stable-diffusion-webui/models/ControlNet
@@ -118,7 +122,7 @@ echo "Installing config files"
 cd /workspace/stable-diffusion-webui
 rm webui-user.sh config.json ui-config.json
 wget https://raw.githubusercontent.com/ashleykleynhans/runpod-worker-a1111/main/webui-user.sh
-wget https://raw.githubusercontent.com/ashleykleynhans/runpod-worker-a1111/main/config.json
+wget https://raw.githubusercontent.com/Hazelf0x/runpod-worker-a11110-hazel/main/config.json
 wget https://raw.githubusercontent.com/ashleykleynhans/runpod-worker-a1111/main/ui-config.json
 
 echo "Starting A1111 Web UI"
